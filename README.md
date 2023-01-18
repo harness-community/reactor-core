@@ -1,3 +1,7 @@
+Build & Test Reactor Core on Harness CI
+=======================================
+This is a fork of Reactor Core project. This repo can be used to demo the new capabilities of Harness CI. Please follow [these instructions](https://github.com/harness-community/reactor-core/blob/main/.harness/README.md) on how to clone this repo and see the results yourself.
+
 # Reactor Core
 
 [![Join the chat at https://gitter.im/reactor/reactor](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/reactor/reactor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
