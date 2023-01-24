@@ -1,0 +1,39 @@
+pipeline:
+  name: reactor-core
+  identifier: reactorcore
+  projectIdentifier: default
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: prepare
+        identifier: prepare
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: interpret version and run checks
+                  identifier: interpret_version
+                  spec:
+                    connectorRef: <+input>
+                    image: openjdk:8-jdk
+                    shell: Sh
+                    command: |-
+                      ./gradlew qualifyVersionGha
+                      ./gradlew check
+  properties:
+    ci:
+      codebase:
+        connectorRef: <+input>
+        repoName: reactor-core
+        build: <+input>
